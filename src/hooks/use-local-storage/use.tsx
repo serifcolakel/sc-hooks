@@ -7,6 +7,7 @@ export default function UsageLocalStorage() {
 
   return (
     <div>
+      <h1>useLocalStorage</h1>
       <button
         onClick={() => {
           setToken(Boolean(Math.round(Math.random() * 10) % 2));
