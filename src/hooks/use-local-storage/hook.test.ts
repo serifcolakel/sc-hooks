@@ -1,8 +1,6 @@
 import { test } from 'vitest';
 import { useLocalStorage } from './index';
 
-const EMPTY_VALUE = undefined;
-
 test('useLocalStorage hook with string', async ({ expect }) => {
   const TEST_OPTION = {
     KEY: 'test-key-string',
@@ -21,7 +19,7 @@ test('useLocalStorage hook with string', async ({ expect }) => {
   expect(value).toBe(TEST_OPTION.VALUE);
 
   removeItem();
-  expect(getItem()).toBe(EMPTY_VALUE);
+  expect(getItem()).toBeUndefined();
 });
 
 test('useLocalStorage hook with object', async ({ expect }) => {
@@ -44,7 +42,7 @@ test('useLocalStorage hook with object', async ({ expect }) => {
   expect(value).toEqual(TEST_OPTION.VALUE);
 
   removeObject();
-  expect(getObject()).toBe(EMPTY_VALUE);
+  expect(getObject()).toBeUndefined();
 });
 
 test('useLocalStorage hook with number', async ({ expect }) => {
@@ -65,7 +63,7 @@ test('useLocalStorage hook with number', async ({ expect }) => {
   expect(value).toEqual(TEST_OPTION.VALUE);
 
   removeItem();
-  expect(getItem()).toBe(EMPTY_VALUE);
+  expect(getItem()).toBeUndefined();
 });
 
 test('useLocalStorage hook with boolean', async ({ expect }) => {
@@ -86,7 +84,7 @@ test('useLocalStorage hook with boolean', async ({ expect }) => {
   expect(value).toEqual(TEST_OPTION.VALUE);
 
   removeItem();
-  expect(getItem()).toBe(EMPTY_VALUE);
+  expect(getItem()).toBeUndefined();
 });
 
 test('useLocalStorage hook with array', async ({ expect }) => {
@@ -107,5 +105,5 @@ test('useLocalStorage hook with array', async ({ expect }) => {
   expect(value).toEqual(TEST_OPTION.VALUE);
 
   removeItem();
-  expect(getItem()).toBe(EMPTY_VALUE);
+  expect(getItem()).toBeUndefined();
 });
