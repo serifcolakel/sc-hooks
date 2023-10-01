@@ -20,10 +20,8 @@ export default function UsageEventLister() {
 
   useEventListener('resize', handleResize);
 
-  useEventListener('dblclick', () => {
-    // eslint-disable-next-line no-alert
-    alert('dblclick');
-    window.removeEventListener('resize', handleResize);
+  useEventListener('contextmenu', (contextMenuEvent) => {
+    window.console.log({ contextMenuEvent });
   });
 
   return (
